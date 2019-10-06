@@ -8,14 +8,23 @@ public class YieldExample {
 
         threadA.start();
         threadB.start();
-        try {Thread.sleep(3000);}catch (InterruptedException e) {}
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+        }
 
         threadA.work = false;
 
-        try {Thread.sleep(3000);}catch (InterruptedException e) {}
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+        }
         threadA.work = true;
 
-        try {Thread.sleep(3000);}catch (InterruptedException e) {}
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+        }
 
         threadA.stop = true;
         threadB.stop = true;
@@ -26,15 +35,16 @@ public class YieldExample {
         public boolean work = true;
 
         public void run() {
-            while(!stop) {
-                if(work) {
+            while (!stop) {
+                if (work) {
                     System.out.println("ThreadA is running");
-                }else {
+                } else {
                     Thread.yield();
                 }
                 try {
                     Thread.sleep(500);
-                }catch (InterruptedException e) {}
+                } catch (InterruptedException e) {
+                }
             }
         }
     }
@@ -44,16 +54,17 @@ public class YieldExample {
         public boolean work = true;
 
         public void run() {
-            while(!stop) {
-                if(work) {
+            while (!stop) {
+                if (work) {
                     System.out.println("ThreadB is running");
-                }else {
+                } else {
                     Thread.yield();
                 }
 
                 try {
                     Thread.sleep(500);
-                }catch (InterruptedException e) {}
+                } catch (InterruptedException e) {
+                }
             }
         }
     }

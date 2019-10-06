@@ -8,7 +8,8 @@ public class JoinExample {
 
         try {
             sumThread.join();
-        }catch (InterruptedException e) {}
+        } catch (InterruptedException e) {
+        }
 
         System.out.println(sumThread.getSum());
     }
@@ -25,7 +26,7 @@ public class JoinExample {
         }
 
         public void run() {
-            for(int i = 1; i <= 100; i++) {
+            for (int i = 1; i <= 100; i++) {
                 sum += i;
             }
         }

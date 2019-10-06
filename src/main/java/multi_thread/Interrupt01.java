@@ -8,7 +8,8 @@ public class Interrupt01 {
 
         try {
             Thread.sleep(1000);
-        }catch (InterruptedException e) {}
+        } catch (InterruptedException e) {
+        }
 
         thread.interrupt();
     }
@@ -19,7 +20,7 @@ public class Interrupt01 {
             while (true) {
                 System.out.println("running " + getName());
 
-                if(Thread.interrupted()) {
+                if (Thread.interrupted()) {
                     break;
                 }
             }

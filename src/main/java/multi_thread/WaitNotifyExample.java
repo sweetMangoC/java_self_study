@@ -18,7 +18,8 @@ public class WaitNotifyExample {
             notify();
             try {
                 wait();
-            }catch (InterruptedException e) {}
+            } catch (InterruptedException e) {
+            }
         }
 
         public synchronized void methodB(int i) {
@@ -26,12 +27,14 @@ public class WaitNotifyExample {
             notify();
             try {
                 wait();
-            }catch (InterruptedException e) {}
+            } catch (InterruptedException e) {
+            }
         }
     }
 
     private static class ThreadA extends Thread {
         private WorkObject workObject;
+
         public ThreadA(WorkObject workObject) {
             this.workObject = workObject;
         }
@@ -45,6 +48,7 @@ public class WaitNotifyExample {
 
     private static class ThreadB extends Thread {
         private WorkObject workObject;
+
         public ThreadB(WorkObject workObject) {
             this.workObject = workObject;
         }

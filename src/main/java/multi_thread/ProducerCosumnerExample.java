@@ -1,7 +1,5 @@
 package multi_thread;
 
-import java.nio.channels.Pipe;
-
 public class ProducerCosumnerExample {
 
     public static void main(String[] args) {
@@ -30,7 +28,7 @@ public class ProducerCosumnerExample {
         }
 
         public synchronized void getData() {
-            if(this.data == null) {
+            if (this.data == null) {
                 try {
                     wait();
                 } catch (InterruptedException e) {
@@ -43,7 +41,7 @@ public class ProducerCosumnerExample {
         }
     }
 
-    private static class Consumer extends Thread{
+    private static class Consumer extends Thread {
         private DataBox dataBox;
 
         public Consumer(DataBox dataBox) {
@@ -51,13 +49,13 @@ public class ProducerCosumnerExample {
         }
 
         public void run() {
-            for(int i = 0; i < 10; i++) {
+            for (int i = 0; i < 10; i++) {
                 dataBox.getData();
             }
         }
     }
 
-    private static class Producer extends Thread{
+    private static class Producer extends Thread {
         private DataBox dataBox;
 
         public Producer(DataBox dataBox) {
@@ -65,7 +63,7 @@ public class ProducerCosumnerExample {
         }
 
         public void run() {
-            for(int i = 0; i < 10; i++) {
+            for (int i = 0; i < 10; i++) {
                 dataBox.setData("helloWorld setData " + i);
             }
         }
