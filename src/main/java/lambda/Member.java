@@ -1,7 +1,6 @@
 package lambda;
 
 
-import lombok.Data;
 import lombok.Getter;
 
 public class Member {
@@ -11,12 +10,17 @@ public class Member {
     @Getter
     private Integer age;
 
-    public Member(String name) {
-        this.name = name;
-    }
+    @Getter
+    private Address address;
 
     public Member(String name, Integer age) {
         this.name = name;
         this.age = age;
+    }
+
+    public Member(String name, Integer age, Address address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
     }
 }
